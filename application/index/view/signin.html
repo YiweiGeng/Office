@@ -1,0 +1,58 @@
+{extend name="sign"}
+{block name="title"}登录系统 | 中国中车{/block}
+{block name="sign"}
+<h3>登录</h3>
+<hr />
+<form action="index.php/sign" method="post" class="am-form">
+    <div class="am-form-group">
+        <label for="email">邮箱:{$user = session('user.email')}</label>
+        <input type="email" name="email" id="email" class="am-form-field" placeholder="请输入邮箱地址" required="required" autocomplete="off" /> 
+    </div>
+    <div class="am-form-group">
+        <label for="password">密码:</label>
+        <input type="password" name="pwd" id="pwd" class="am-form-field" placeholder="请输入密码" required="required" />
+    </div>
+    <label for="remember-me">
+        <input id="remember-me" type="checkbox"> 记住我
+    </label>
+    <br />
+    <div class="am-cf">
+        <input type="submit" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
+        <a href=""  class="am-btn am-btn-default am-btn-sm am-fl">忘记密码？</a>
+        <a href="index.php/signup"  class="am-btn am-btn-default am-btn-sm am-fr">没有账号？点我注册^_^</a>
+    </div>
+</form>
+{/block}
+
+<!-- {block name="script"}
+<script type="text/javascript">
+function signin() {
+    var email = $('#email').val();
+    var pwd = $('#pwd').val();
+    $.ajax({
+        url: 'index.php/sign',
+        method: 'POST',
+        data: {
+            'email': email,
+            'pwd': pwd,
+        },
+        dataType: 'json',
+        beforeSend: function() {
+            $('input:submit').attr('disabled', 'disabled');
+            $('input:submit').attr('value', '正在登录...');
+        },
+        success: function(data) {
+            console.log(data);
+            if (data) {
+                $('input:submit').attr('value', '登录成功');
+                window.location.href = 'index.php/sign';
+            } else {
+                alert('登录失败，请重试');
+                location.replace('signup');
+            }
+        },
+    })
+}
+</script>
+
+{/block} -->

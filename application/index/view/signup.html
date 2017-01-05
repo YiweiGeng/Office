@@ -1,0 +1,29 @@
+{extend name="sign"}
+{block name="title"}加入系统 | 中国中车{/block}
+{block name="sign"}
+<h3>注册</h3>
+<hr />
+<form class="am-form" method="post">
+    <div class="am-form-group am-form-icon am-form-feedback">
+        <label for="email">邮箱:</label>
+        <input type="email" name="email" id="email" class="am-form-field" placeholder="请输入有效的邮箱地址,例:single@example.com" required="required" autocomplete="off" />
+    </div>
+    <div class="am-form-group am-form-icon am-form-feedback">
+        <label for="password">密码:</label>
+        <input type="password" name="pwd" id="pwd" class="am-form-field" placeholder="请输入6位以上的密码,建议使用字母与数字组合" required="required" />
+    </div>
+    <div class="am-form-group am-form-icon am-form-feedback">
+        <label for="password">确认密码:</label>
+        <input type="password" name="password" id="password" class="am-form-field" placeholder="请再次输入密码" required="required" />
+    </div>
+    <br>
+    <div class="am-cf">
+        <input type="submit" onclick="signup()" value="注  册" class="am-btn am-btn-primary am-btn-sm am-fl">
+        <a href="/"  class="am-btn am-btn-default am-btn-sm am-fr">已有账号？前去登录^_^</a>
+    </div>
+</form>
+{/block}
+
+{block name="script"}
+<script type="text/javascript" src="__JS__/user.js"></script>
+{/block}
